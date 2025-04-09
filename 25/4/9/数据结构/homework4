@@ -1,0 +1,11 @@
+import keyword
+
+filename = input("请输入Python源代码文件名: ")
+keyword_count = {}
+
+with open(filename, 'r') as file:
+    for word in file.read().split():
+        if keyword.iskeyword(word):
+            keyword_count[word] = keyword_count.get(word, 0) + 1
+
+print(keyword_count)

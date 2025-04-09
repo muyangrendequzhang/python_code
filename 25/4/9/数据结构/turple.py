@@ -14,3 +14,19 @@ print("以下电影发布于2025年后")
 for film in films:
     if(film[1]>=2025):
         print(film)
+a1=list(a)
+b1=list(b)
+c1=list(c)
+d1=list(d)
+e1=list(e)
+print("以下电影2021年上映")
+film1=[a1,b1,c1,d1,e1]
+for i in film1:
+    if(i[1]==2021):
+        print(i)
+for i in range(0,5):
+    for j in range(0,4):
+        if(film1[j][3]<film1[j+1][3]):
+            film1[j],film1[j+1]=film1[j+1],film1[j]
+for film in film1:
+    print(film)
