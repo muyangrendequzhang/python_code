@@ -17,13 +17,12 @@ def monitor_process(pid):
 
 def convert_audio(input_file, output_file, codec):
     if codec == 'mp3':
-        command = ['ffmpeg', '-i', input_file, '-b:a', '128k', output_file]
+        command = ['ffmpeg', '-i', input_file, '-b:a', '128k', '-ar', '48000', output_file]
     elif codec == 'aac':
-        command = ['ffmpeg', '-i', input_file, '-c:a', 'aac', '-b:a', '128k', output_file]
+        command = ['ffmpeg', '-i', input_file, '-c:a', 'aac', '-b:a', '128k', '-ar', '48000', output_file]
     else:
         print("不支持的编码格式。")
         return
-
     try:
         # 启动 ffmpeg 进程
         process = subprocess.Popen(command)
