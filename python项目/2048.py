@@ -15,13 +15,7 @@ class GameField:
         self.field = None
         self.reset()
         
-    def reset(self):
-        if self.score > self.highscore:
-            self.highscore = self.score
-        self.score = 0
-        self.field = [[0 for i in range(self.width)] for j in range(self.height)]
-        self.spawn()
-        self.spawn()#初始实例2个初始值
+    #初始实例2个初始值
     
     def spawn(self):
         new_element = 4 if randrange(100) > 89 else 2
